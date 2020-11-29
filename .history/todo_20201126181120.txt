@@ -1,0 +1,9 @@
+                                        Node-JS :
+================================================================================
+
+- Design DB [x]
+- Build backend skeleton [x]
+- Change DB link []
+- Start working on routes []
+- Multiple images upload []
+

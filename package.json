@@ -1,0 +1,14 @@
+{
+  "name": "or-barkan-helper",
+  "version": "1.0.0",
+  "description": "App for uploading images and organining them on website",
+  "main": "app.js'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guy Yehoshua",
+  "license": "ISC",
+  "dependencies": {
+    "multer": "^1.4.2"
+  }
+}

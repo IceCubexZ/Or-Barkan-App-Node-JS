@@ -1,0 +1,15 @@
+                                        Node-JS :
+================================================================================
+
+- Design DB [x]
+- Build backend skeleton [x]
+- Change DB link [x]
+- Start working on routes [x]
+- Multiple images upload [x]
+- Save file name in db [X]
+================================================================================
+
+                                        Flutter :
+- Create Sketch of how the app is going to look like []
+
+
