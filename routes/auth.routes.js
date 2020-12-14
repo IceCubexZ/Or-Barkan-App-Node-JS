@@ -23,5 +23,5 @@ module.exports = function(app) {
 
   app.get('/api/jwtAuth', controller.userValidation);
 
-  app.post("/api/auth/signin", authJwt.verifyToken, controller.signin);
+  app.post("/api/auth/signin", controller.signin);
 };
