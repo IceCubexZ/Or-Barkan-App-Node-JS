@@ -19,5 +19,11 @@ module.exports = app => {
 
     router.post("/add_stock/:id", upload.array('file', 20), stocks.create);
 
+    router.get("/stocks", stocks.findAll);
+    
+    router.get("/stock/:id", stocks.findOne);
+
+    router.get("/get_stock_image/:id", stocks.getImage);
+
     app.use('/api', router);
 }

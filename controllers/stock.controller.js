@@ -1,4 +1,5 @@
 const db = require("../models");
+const path = require('path');
 const Stock = db.stock;
 const Contact = require('../models/contact.model');
 
@@ -34,3 +35,50 @@ exports.create = (req, res) => {
      });
 }
 
+exports.findAll = (req, res) => {
+    const title = req.query.title;
+    const condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+
+    Stock.find(condition)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Some error occured..."
+            });
+        });
+};
+
+exports.findOne = (req, res) => {
+    const id = req.params.id;
+
+    Stock.find({id:id})
+    .then(data => {
+        if(!data) {
+            res.status(404).send({message: "Could'nt find Stock with this id :" + id});
+        }
+        else {
+            res.send(data);
+        }
+    })
+    .catch(err => {
+        res.status(500)
+        .send({message: "Error"})
+    })
+}
+
+exports.getImage = (req, res) => {
+    const id = req.params.id;
+    const imgName = req.body.imgName;
+
+    Stock.findById({_id:id})
+    .then(data => {
+        if(!data) {
+            res.status(404).send({message: "Couldn't find Stock with thid id : " + id});
+        }
+        else {
+            res.status(200).sendFile(path.join(__dirname + "/../uploads/", "/" + imgName));
+        }
+    })
+}
