@@ -78,7 +78,9 @@ exports.getImage = (req, res) => {
             res.status(404).send({message: "Couldn't find Stock with thid id : " + id});
         }
         else {
-            res.status(200).sendFile(path.join(__dirname + "/../uploads/", "/" + imgName));
+            for(let i = 0; i <= data.image_name; i++) {
+                res.status(200).sendFile(path.join(__dirname + "/../uploads/", "/" + data.image_name[i]));
+            }
         }
     })
 }
