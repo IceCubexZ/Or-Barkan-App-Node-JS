@@ -53,7 +53,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Stock.find({id:id})
+    Stock.find({_id:id})
     .then(data => {
         if(!data) {
             res.status(404).send({message: "Could'nt find Stock with this id :" + id});
