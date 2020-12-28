@@ -36,7 +36,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Contact.find({id: id})
+    Contact.find({_id: id})
       .populate("stocks")
       .then(data => {
           if(!data){
